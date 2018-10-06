@@ -8,7 +8,7 @@ def genWeb(dimA, dimB, color):
 
     f=open(filename,"a+")
     a=str(int(dimA*60))
-    b=str(int(dimB*60*2))
+    b=str(int(dimB*60))
     
     display="block"
     if(int(dimB)<5):
@@ -17,6 +17,7 @@ def genWeb(dimA, dimB, color):
     
     style="""style=\"
     border: 1px solid black;
+    padding: 2px;
     background-color:rgb"""+str(color)+"""
    ; height:"""+a+"""
     ; width:"""+b+"""
@@ -25,7 +26,7 @@ def genWeb(dimA, dimB, color):
     ; display:"""+display+"""
     ;}\""""
     
-    genCode="<div "+style+"> <h1 style=\"font-family:Courier New\">Hello World</h1> </div>\n"
+    genCode="<div "+style+"> <p style=\"font-family:Courier New; color:white; font-size:20px;\">This is a demonstration.</p> </div>\n"
     
     
     f.write(genCode)

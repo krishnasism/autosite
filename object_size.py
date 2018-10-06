@@ -47,16 +47,32 @@ cnts = cnts[0] if imutils.is_cv2() else cnts[1]
 
 # sort the contours from left-to-right and initialize the
 # 'pixels per metric' calibration variable
+
+
+for c in cnts:
+    print("CONTOURS: "+str(c[0][0][0]))
+
+reverse=False
+i=1
 (cnts, _) = contours.sort_contours(cnts)
+
+boundingBoxes = [cv2.boundingRect(c) for c in cnts]
+(cnts, boundingBoxes) = zip(*sorted(zip(cnts, boundingBoxes),
+		key=lambda b:b[1][i], reverse=reverse))
+
+          
 pixelsPerMetric = None
 i=0
+
+
+
 # loop over the contours individually
 for c in cnts:
         
 	# if the contour is not sufficiently large, ignore it
 	if cv2.contourArea(c) < 100:
 		continue
-	
+
 
 	# compute the rotated bounding box of the contour
 	orig = image.copy()
