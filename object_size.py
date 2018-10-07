@@ -137,7 +137,7 @@ for c in cnts:
 	print("HEIGHT: "+str(dimA))
 	print("WIDTH: "+str(dimB))
 
-	gen.genWeb(dimA,dimB,forColor[tltrX+20,tltrY+20])
+	gen.genWeb(dimA,dimB,forColor[tltrX+50,tltrY+50])
         
 	# draw the object sizes on the image
 	cv2.putText(orig, "{:.1f}in".format(dimA),

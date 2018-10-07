@@ -16,8 +16,9 @@ def genWeb(dimA, dimB, color):
     
     
     style="""style=\"
-    border: 1px solid black;
+    border: 0px solid black;
     padding: 2px;
+    text-align: center;
     background-color:rgb"""+str(color)+"""
    ; height:"""+a+"""
     ; width:"""+b+"""
