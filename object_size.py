@@ -48,7 +48,8 @@ def generate(imageName,widthOfLeftMost,f):
 
 
         for c in cnts:
-            print("CONTOURS: "+str(c[0][0][0]))
+            xy=c[0][0]  
+            print("CONTOURS: "+str(xy))
 
         reverse=False
         i=1
@@ -132,9 +133,9 @@ def generate(imageName,widthOfLeftMost,f):
                         continue
                 dimA = dA / pixelsPerMetric
                 dimB = dB / pixelsPerMetric
-                
+                xy=c[0][0]  
 
-                gen.genWeb(imheight,imwidth,dimA,dimB,forColor[tltrX+50,tltrY+50],f)
+                gen.genWeb(xy,imheight,imwidth,dimA,dimB,forColor[tltrX+50,tltrY+50],f)
                 
                 # draw the object sizes on the image
                 cv2.putText(orig, "{:.1f}in".format(dimA),

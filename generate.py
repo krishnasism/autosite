@@ -1,9 +1,16 @@
 
-def genWeb(imA, imB, dimA, dimB, color,f):
+def genWeb(xy,imA, imB, dimA, dimB, color,f):
+    import readtext
+    from PIL import Image
     
-    a=int(dimA*60)
-    b=int(dimB*60)
+    im=Image.open("images/test2.png")
+    dpi=im.info['dpi'][0]
+
     
+    a=int(dimA*dpi)
+    b=int(dimB*dpi)
+    text= readtext.ocr(xy,b,a)
+    print(text)
     imA-=200 #account for placement of reference
     
     pa=int((a/imA*100))
@@ -17,6 +24,9 @@ def genWeb(imA, imB, dimA, dimB, color,f):
     #pa=int((a/imA*100)*sysheight/imA)
     #pb=int((b/imB*100)*syswidth/imB)
    
+    if(len(text)==0):
+        text="This is a demonstration."
+    
     
     
     display="block"
@@ -36,7 +46,7 @@ def genWeb(imA, imB, dimA, dimB, color,f):
     ; display:"""+display+"""
     ;}\""""
     
-    genCode="<div "+style+"> <p style=\"font-family:Courier New; color:white; font-size:20px;\">This is a demonstration.</p> </div>\n"
+    genCode="<div "+style+"> <p style=\"font-family:Courier New; color:white; font-size:20px;\">"+text+"</p> </div>\n"
     
     
     f.write(genCode)
