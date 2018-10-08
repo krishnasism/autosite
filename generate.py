@@ -1,14 +1,23 @@
 
-def genWeb(dimA, dimB, color):
+def genWeb(imA, imB, dimA, dimB, color,f):
+    
+    a=int(dimA*60)
+    b=int(dimB*60)
+    
+    imA-=200 #account for placement of reference
+    
+    pa=int((a/imA*100))
+    pb=int((b/imB*100))
+    
+    #from win32api import GetSystemMetrics
+    
+    #syswidth= GetSystemMetrics(0)
+    #sysheight= GetSystemMetrics(1)
+    
+    #pa=int((a/imA*100)*sysheight/imA)
+    #pb=int((b/imB*100)*syswidth/imB)
    
     
-    
-    
-    filename="index.html"
-
-    f=open(filename,"a+")
-    a=str(int(dimA*60))
-    b=str(int(dimB*60))
     
     display="block"
     if(int(dimB)<5):
@@ -20,8 +29,8 @@ def genWeb(dimA, dimB, color):
     padding: 2px;
     text-align: center;
     background-color:rgb"""+str(color)+"""
-   ; height:"""+a+"""
-    ; width:"""+b+"""
+   ; height:"""+str(pa)+"""%
+    ; width:"""+str(pb)+"""%
     ; margin-bottom:"""+str(10)+"""
     ; margin-left:"""+str(10)+"""
     ; display:"""+display+"""
