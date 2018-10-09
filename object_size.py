@@ -9,19 +9,12 @@ def generate(imageName,widthOfLeftMost,f):
         import cv2
         import generate as gen
         from PIL import Image
-        import os
 
-        #os.remove("index.html")
+
         def midpoint(ptA, ptB):
                 return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
 
-        # construct the argument parse and parse the arguments
-        #ap = argparse.ArgumentParser()
-        #ap.add_argument("-i", "--image", required=True,
-        #	help="path to the input image")
-        #ap.add_argument("-w", "--width", type=float, required=True,
-        #	help="width of the left-most object in the image (in inches)")
-        #args = vars(ap.parse_args())
+
 
         # load the image, convert it to grayscale, and blur it slightly
         image = cv2.imread(imageName)

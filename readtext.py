@@ -3,8 +3,7 @@ def ocr(xy,h,w):
     import pytesseract
     from PIL import Image
     
-    
-    img = cv2.imread("images/test2.png")
+    img = cv2.imread("images/capture.png")
     x=int(xy[0])
     y=int(xy[1])
     print(str(x)+","+str(y))

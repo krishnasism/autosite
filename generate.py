@@ -3,7 +3,7 @@ def genWeb(xy,imA, imB, dimA, dimB, color,f):
     import readtext
     from PIL import Image
     
-    im=Image.open("images/test2.png")
+    im=Image.open("images/capture.png")
     dpi=im.info['dpi'][0]
 
     
