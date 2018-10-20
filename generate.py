@@ -3,6 +3,7 @@ def genWeb(xy,imA, imB, dimA, dimB, color,f):
     from PIL import Image
     import code_strings as cs
     im=Image.open(cs.filename)
+    
     dpi=im.info['dpi'][0]
 
     

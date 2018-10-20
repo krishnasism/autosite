@@ -3,4 +3,4 @@ start="""<html>
 <body><center>"""
 
 end="""</center></body></html>"""
-filename="""images/output.png"""
+filename="""images/capture1.png"""

@@ -5,6 +5,8 @@ def ocr(xy,h,w):
     import code_strings as cs
     import os
     
+    import time
+    
     img = cv2.imread(cs.filename)
     x=int(xy[0])
     y=int(xy[1])
@@ -15,11 +17,15 @@ def ocr(xy,h,w):
     
     cv2.imwrite("images/cropped.png",crop_img)
     
-    while(not(checkFile())):
-        pass
+   # while(not(checkFile())):
+    #    time.sleep(1)
     
-    text = pytesseract.image_to_string(Image.open("images/cropped.png"))
-    os.remove("images/cropped.png")
+    d=input("Press Enter to continue")
+
+    if os.path.exists("images/cropped.png") and os.path.getsize("images/cropped.png") > 0:
+        text = pytesseract.image_to_string(Image.open("images/cropped.png"))
+    else:
+        text=""
     #cv2.waitKey(0)
     
     return text
