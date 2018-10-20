@@ -3,6 +3,8 @@ def ocr(xy,h,w):
     import pytesseract
     from PIL import Image
     import code_strings as cs
+    import os
+    
     img = cv2.imread(cs.filename)
     x=int(xy[0])
     y=int(xy[1])
@@ -10,9 +12,23 @@ def ocr(xy,h,w):
     crop_img = img[y:y+w, x:x+h]
     
     #cv2.imshow("cropped", crop_img)
+    
     cv2.imwrite("images/cropped.png",crop_img)
+    
+    while(not(checkFile())):
+        pass
+    
     text = pytesseract.image_to_string(Image.open("images/cropped.png"))
-
+    os.remove("images/cropped.png")
     #cv2.waitKey(0)
     
     return text
+
+
+def checkFile():
+    import os
+
+    if os.path.exists("images/cropped.png") and os.path.getsize("images/cropped.png") > 0:
+        return True
+    else:
+        return False

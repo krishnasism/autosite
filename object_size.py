@@ -137,7 +137,3 @@ def generate(imageName,widthOfLeftMost,f):
                 cv2.putText(orig, "{:.1f}in".format(dimB),
                         (int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,
                         0.65, (255, 255, 255), 2)
-
-                # show the output image
-                cv2.imshow("Image", orig)
-                cv2.waitKey(0)
