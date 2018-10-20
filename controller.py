@@ -2,7 +2,7 @@ import object_size as gen
 import code_strings as code
 import os
 import capture as cap
-
+import code_strings as cs
 
 
 exists = os.path.isfile("index.html")
@@ -14,7 +14,7 @@ f=open("index.html","a+")
 
 f.write(code.start)
 
-image="images/capture.png"
+image=cs.filename
 refS=0.955
 
 gen.generate(image,refS,f)
