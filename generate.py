@@ -1,4 +1,3 @@
-
 def genWeb(xy,imA, imB, dimA, dimB, color,f):
     import readtext
     from PIL import Image
