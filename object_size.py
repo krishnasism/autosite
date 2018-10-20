@@ -118,17 +118,19 @@ def generate(imageName,widthOfLeftMost,f):
                 if pixelsPerMetric is None:
                         pixelsPerMetric = dB / widthOfLeftMost
 
+                print("DPI : "+str(pixelsPerMetric))
+
 
                 
                 # compute the size of the object
                 if(i==0):
                         i=i+1
                         continue
-                dimA = dA / pixelsPerMetric
-                dimB = dB / pixelsPerMetric
+                dimA = dA/pixelsPerMetric
+                dimB = dB/pixelsPerMetric
                 xy=c[0][0]  
 
-                gen.genWeb(xy,imheight,imwidth,dimA,dimB,forColor[tltrX+50,tltrY+50],f)
+                gen.genWeb(xy,imheight,imwidth,dimA,dimB,forColor[tltrX+50,tltrY+50],f,pixelsPerMetric)
                 
                 # draw the object sizes on the image
                 cv2.putText(orig, "{:.1f}in".format(dimA),

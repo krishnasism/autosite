@@ -10,6 +10,8 @@ if exists:
     os.remove("index.html")
 
 #cap.takePicture() #enable this 
+
+
 f=open("index.html","a+")
 
 f.write(code.start)

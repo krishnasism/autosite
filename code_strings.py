@@ -3,4 +3,4 @@ start="""<html>
 <body><center>"""
 
 end="""</center></body></html>"""
-filename="""images/output.png"""
+filename="""images/output.png""" #change this to input file

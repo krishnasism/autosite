@@ -1,18 +1,14 @@
-def genWeb(xy,imA, imB, dimA, dimB, color,f):
+def genWeb(xy,imA, imB, dimA, dimB, color,f,ppm):
     import readtext
-    from PIL import Image
-    import code_strings as cs
-    im=Image.open(cs.filename)
     
-    dpi=im.info['dpi'][0]
-
+    a=int(dimA*ppm)
     
-    a=int(dimA*dpi)
-    
-    b=int(dimB*dpi)
+    b=int(dimB*ppm)
     text= readtext.ocr(xy,b,a)
+    
     print(text)
     print("DIMENSIONS OF DIV : "+str(a)+","+str(b))
+    print(str(imA)+" inches X "+str(imB)+" inches")
     print("DIMENSIONS OF image : "+str(imA)+","+str(imB))
 
     imA-=200 #account for placement of reference
@@ -20,13 +16,6 @@ def genWeb(xy,imA, imB, dimA, dimB, color,f):
     pa=int((a/imA*100))
     pb=int((b/imB*100))
     
-    #from win32api import GetSystemMetrics
-    
-    #syswidth= GetSystemMetrics(0)
-    #sysheight= GetSystemMetrics(1)
-    
-    #pa=int((a/imA*100)*sysheight/imA)
-    #pb=int((b/imB*100)*syswidth/imB)
    
     if(len(text)==0):
         text="This is a demonstration."
