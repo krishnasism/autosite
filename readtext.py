@@ -19,8 +19,7 @@ def ocr(xy,h,w):
     
    # while(not(checkFile())):
     #    time.sleep(1)
-    
-    d=input("Press Enter to continue")
+
 
     if os.path.exists("images/cropped.png") and os.path.getsize("images/cropped.png") > 0:
         text = pytesseract.image_to_string(Image.open("images/cropped.png"))

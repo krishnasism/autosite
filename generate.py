@@ -8,9 +8,13 @@ def genWeb(xy,imA, imB, dimA, dimB, color,f):
 
     
     a=int(dimA*dpi)
+    
     b=int(dimB*dpi)
     text= readtext.ocr(xy,b,a)
     print(text)
+    print("DIMENSIONS OF DIV : "+str(a)+","+str(b))
+    print("DIMENSIONS OF image : "+str(imA)+","+str(imB))
+
     imA-=200 #account for placement of reference
     
     pa=int((a/imA*100))
