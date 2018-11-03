@@ -9,7 +9,7 @@ exists = os.path.isfile("index.html")
 if exists:
     os.remove("index.html")
 
-#cap.takePicture() #enable this 
+cap.takePicture() #enable this 
 
 
 f=open("index.html","a+")
