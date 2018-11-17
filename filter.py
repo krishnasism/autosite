@@ -1,7 +1,7 @@
 def postProcess():
     from PIL import Image,ImageEnhance
     
-    img=Image.open("images/11.png")
+    img=Image.open("images/output.png")
     
     img.show
     cn=ImageEnhance.Contrast(img)

@@ -56,7 +56,7 @@ def mainLoop(screen, px):
 def main():
     pygame.display.init()
 
-    input_loc = 'images/outputx.png'
+    input_loc = 'images/capture.png'
     output_loc = 'images/output.png'
     screen, px = setup(input_loc)
     left, upper, right, lower = mainLoop(screen, px)

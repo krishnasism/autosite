@@ -54,7 +54,7 @@ class Toplevel1:
             "roman -underline 0 -overstrike 0"
 
         top.geometry("590x448+336+154")
-        top.title("New Toplevel")
+        top.title("Realtime Website Generator")
         top.configure(background="#05d9e8")
         top.resizable(False, False)
 
