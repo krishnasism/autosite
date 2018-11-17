@@ -1,6 +1,5 @@
-import pygame, sys
+import pygame
 from PIL import Image
-pygame.init()
 
 def displayImage(screen, px, topleft, prior):
     # ensure that the rect always has positive width, height
@@ -54,10 +53,11 @@ def mainLoop(screen, px):
         if topleft:
             prior = displayImage(screen, px, topleft, prior)
     return ( topleft + bottomright )
+def main():
+    pygame.display.init()
 
-if __name__ == "__main__":
-    input_loc = 'images/lol.png'
-    output_loc = 'images/lolcrop.png'
+    input_loc = 'images/outputx.png'
+    output_loc = 'images/output.png'
     screen, px = setup(input_loc)
     left, upper, right, lower = mainLoop(screen, px)
 
@@ -70,3 +70,6 @@ if __name__ == "__main__":
     im = im.crop(( left, upper, right, lower))
     pygame.display.quit()
     im.save(output_loc)
+if __name__ == "__main__":
+    main()
+    
